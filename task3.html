@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather App | Your Daily Weather Companion</title>
+<meta name="description" content="Weather App — real-time weather and 5-day forecast for any city in the world." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="task3.css" />
+</head>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <span class="brand-mark">☀</span>
+      <span class="brand-name">Weather<span>App</span></span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span id="themeIcon">🌙</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO / SEARCH ================= -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <h1>Know the Weather Before You Go</h1>
+    <p class="hero-sub">Get accurate real-time weather updates for any city around the world.</p>
+
+    <form class="search-box" id="searchForm">
+      <span class="search-icon">📍</span>
+      <input type="text" id="cityInput" placeholder="Search for a city..." autocomplete="off" required />
+      <button type="submit" class="btn btn-primary" id="searchBtn">Search</button>
+    </form>
+
+    <p class="search-error" id="searchError"></p>
+  </div>
+</section>
+
+<main class="dashboard">
+
+  <!-- ================= LOADING SPINNER ================= -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Fetching weather data...</p>
+  </div>
+
+  <!-- ================= MAIN WEATHER CARD ================= -->
+  <section class="weather-card glass" id="weatherCard">
+    <div class="weather-top">
+      <div class="location-info">
+        <h2 id="cityName">--</h2>
+        <p id="countryName">--</p>
+        <p class="date-time">
+          <span id="currentDate">--</span> &middot; <span id="currentTime">--</span>
+        </p>
+      </div>
+
+      <div class="temp-info">
+        <img id="weatherIcon" src="" alt="Weather icon" />
+        <div>
+          <span class="temp-value" id="temperature">--°</span>
+          <span class="feels-like">Feels like <span id="feelsLike">--°</span></span>
+        </div>
+      </div>
+    </div>
+
+    <p class="weather-description" id="weatherDescription">--</p>
+
+    <div class="weather-stats">
+      <div class="stat-pill">
+        <span class="pill-icon">💧</span>
+        <div><strong id="humidity">--%</strong><span>Humidity</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="pill-icon">💨</span>
+        <div><strong id="windSpeed">-- km/h</strong><span>Wind Speed</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="pill-icon">🎚️</span>
+        <div><strong id="pressure">-- hPa</strong><span>Pressure</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="pill-icon">👁️</span>
+        <div><strong id="visibility">-- km</strong><span>Visibility</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="pill-icon">🌅</span>
+        <div><strong id="sunrise">--:--</strong><span>Sunrise</span></div>
+      </div>
+      <div class="stat-pill">
+        <span class="pill-icon">🌇</span>
+        <div><strong id="sunset">--:--</strong><span>Sunset</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXTRA WEATHER DETAILS ================= -->
+  <section class="extra-details" id="extraDetails" aria-label="Extra weather details">
+    <div class="detail-card">
+      <span class="detail-icon">🔺</span>
+      <strong id="maxTemp">--°</strong>
+      <span>Max Temperature</span>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🔻</span>
+      <strong id="minTemp">--°</strong>
+      <span>Min Temperature</span>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">☁️</span>
+      <strong id="cloudPercent">--%</strong>
+      <span>Cloud Cover</span>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🕶️</span>
+      <strong id="uvIndex">--</strong>
+      <span>UV Index</span>
+    </div>
+  </section>
+
+  <!-- ================= 5-DAY FORECAST ================= -->
+  <section class="forecast-section" id="forecastSection">
+    <h3>5-Day Forecast</h3>
+    <div class="forecast-grid" id="forecastGrid">
+      <!-- Forecast cards injected by JavaScript -->
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="app-footer" id="contact">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="brand">
+        <span class="brand-mark">☀</span>
+        <span class="brand-name">Weather<span>App</span></span>
+      </div>
+      <p>Your daily weather companion, anywhere in the world.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">TW</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col" id="about">
+      <h4>About</h4>
+      <p>Weather App delivers live, accurate forecasts sourced from OpenWeatherMap, wrapped in a clean, modern dashboard.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 WeatherApp. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
